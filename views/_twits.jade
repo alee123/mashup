@@ -2,4 +2,5 @@ div(id='topper')
 	each tweet, i in tweets
 		div(class='notes', id=tweet.text)
 			p(class="tweetText") #{tweet.text}
+			p(class="from") from: #{tweet.user}
 			input(class='button', type='submit', value=tweet.buttonText, id=tweet.text)

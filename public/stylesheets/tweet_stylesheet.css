@@ -12,8 +12,9 @@ body{
 	background-image:url('../images/escheresque_ste.png');
 }
 
-
-
+.from{
+	font-size: 10px;
+}
 
 .padded{
 	padding:10px;
