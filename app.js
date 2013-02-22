@@ -35,6 +35,7 @@ app.get('/tweets/update', user.update);
 app.post('/users/new', user.create);
 app.post('/tweets/:user', user.newTweet);
 app.post('/users/delete', user.delete);
+app.get('/users/delete', user.balance);
 
 
 

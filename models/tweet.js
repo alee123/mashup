@@ -4,7 +4,9 @@ var tweetSchema = mongoose.Schema({
   text: String,
   user: String,
   money: String,
-  payTo: String
+  payTo: String,
+  done: String,
+  buttonText: String
 });
 
 var Tweet = mongoose.model('Tweet', tweetSchema);

@@ -35,15 +35,14 @@ html
 			div(id='leftBar')
 				div(class='padded')
 					| Welcome #{userC.name}
-				div(class='padded')
-					| Your current balance is:
-					br
-					| $#{userC.balance}
+					
+				include _balance
+
 			div(class='border', id='tweets')
 				div(class='notes', id='login')
 					form(id='tweetForm', action='/tweets/:user', method='POST', value='#{username}'')
 						input(id='textbox', type='text', name = 'tweet')
 						br
-						input((id='submitter',type='submit', value='Submit')
+						input(id='submitter',type='submit', value='Submit')
 					#result	
 				include _twits
