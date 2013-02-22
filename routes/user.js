@@ -21,7 +21,7 @@ exports.tweetList = function(req, res){
 exports.newTweet = function(req, res){
   var noteText = req.body.tweet;
   var payee = "";
-  var payment = "";
+  var cash = "";
   var doneText = "no";
   var button = "";
   if(noteText.indexOf("@")==0){
@@ -31,20 +31,22 @@ exports.newTweet = function(req, res){
       var sub = noteText.substring(noteText.indexOf("$"));
       var space2 = sub.indexOf(" ");
       if (noteText.indexOf("$")==null)
-        payment = ""
+        cash = ""
       else if (space2==null)
-        payment = sub  
+        cash = sub  
       else
-        payment = sub.substring(1, space2);
-      console.log(payment);
+        cash = sub.substring(1, space2);
     }
   }
-  if (payment != "")
+  if (cash != "")
     button = "Pay";
   else
     button = "Archive";
+  if(cash==payee)
+    button = "Archive";
+    cash = ""
 
-  var tweet = new Tweet({text: noteText, user: req.session.user.name, payTo: payee, money: payment, done:doneText, buttonText:button});
+  var tweet = new Tweet({text: noteText, user: req.session.user.name, payTo: payee, money: cash, done:doneText, buttonText:button});
   console.log(tweet);
   if(req.body.tweet.length>140){
     return console.log("doesn't work");
