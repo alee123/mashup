@@ -1,0 +1,22 @@
+doctype 5
+html
+	head
+		title= title
+		link(rel='stylesheet', href='tweet_stylesheet.css')
+		include tweet_stylesheet.css
+		script(src = 'http://code.jquery.com/jquery.js')
+		script(src='/javascripts/twitList.js')
+	body
+		block content
+
+
+		h1 Crappy Twitter
+		div(class='border')
+			div
+				key Look at all these twits!
+			div	
+				each tweet, i in tweets
+					div
+						p(class="names") #{tweet.user}
+						p(class="tweetText") #{tweet.text}
+					br

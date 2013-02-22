@@ -1,0 +1,85 @@
+img.display {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 100px;
+}
+
+body{
+	background-color:#56A5EB;
+	font-family: Verdana, Geneva, sans-serif;
+	display: inline;
+}
+
+h1{
+	text-align: center;
+	font-size: 35px;
+}
+
+#login{
+	display: inline-block;
+	border-radius: 10px;
+	border: 5px black solid;
+	margin: 10px;
+	vertical-align: top;
+	background-color: #aaaaaa;
+	visibility: hidden;
+}
+
+#tweets{
+	display: inline-block;
+	border-radius: 10px;
+	border: 5px black solid;
+	margin: 10px;
+	vertical-align: top;
+	background-color: #aaaaaa;
+	width: 700px;
+}
+
+#topper{
+	border-top: 5px black solid;
+	margin: 0px;
+}
+
+#textbox{
+	background-color: #dddddd;
+	border: 1px #bbbbbb solid;
+	display: inline-block;
+	height: 25px;
+	width: 210px;
+}
+
+.padded{
+	padding:10px;
+
+}
+
+#notImportant{
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+
+}
+
+.names{
+	font-weight: bold;
+	font-size: 22px;
+}
+#textLabel{
+	display:inline-block;
+	width: 100px;
+	text-align: center;
+	padding: 10px;
+}
+
+
+#inputText{
+	vertical-align: middle;
+	height:50px;
+	display: inline-block;
+}
+#submitter{
+	margin-left: 230px;
+	border: 2px black solid;
+	font-size: 18px;
+}

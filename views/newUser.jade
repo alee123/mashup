@@ -1,0 +1,18 @@
+doctype 5
+html
+	head
+		title= title
+		link(href='a_stylesheet.css', rel='stylesheet')
+		include a_stylesheet.css
+		script(src = 'http://code.jquery.com/jquery.js')
+		script(src='/javascripts/forNewUser.js')
+	body
+		block content
+		h1 
+		div
+			form(name='input', action='/users/new', method='POST')
+				key Username: 
+				input(class='textinput', type='text', name = 'uName')
+				br
+				br
+				input(class='submitButton', type='submit', value='Submit')

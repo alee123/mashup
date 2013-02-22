@@ -1,0 +1,26 @@
+img.display {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 100px;
+}
+
+body{
+	background-color:#95e923
+}
+
+div{
+	vertical-align: middle
+}
+
+.textinput { 
+	width: 200px; 
+	height: 20px; 
+	border: 1px solid #999999; 
+	padding: 5px; 
+}
+
+.submitButton{
+	width: 10%;
+	font-size: 100%;
+}

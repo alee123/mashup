@@ -1,0 +1,31 @@
+doctype 5
+html
+	head
+		title= title
+		link(rel='stylesheet', href=styler)
+		if(styler=='tweet_stylesheet.css')
+			include tweet_stylesheet.css
+		if(styler=='tweetTemp_stylesheet.css')
+			include tweetTemp_stylesheet.css
+		script(src = 'http://code.jquery.com/jquery.js')
+		script(src='/javascripts/twitList.js')
+
+	body
+		block content
+
+
+		h1 Crappy Twitter
+		div
+			div(class='padded', id='login')
+				form(id='tweetForm', action='/tweets/:user', method='POST', value='#{username}'')
+					div(id="textLabel",class="names") Compose a twit
+					div(id='inputText')
+						input(id='textbox', type='text', name = 'tweet')
+					br
+					input((id='submitter',type='submit', value='Send Twit')
+				#result
+			div(class='border', id='tweets')
+				div(id='notImportant', class='padded')
+					key Look at all these twits!
+				
+				include _twits
