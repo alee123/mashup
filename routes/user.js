@@ -30,10 +30,10 @@ exports.newTweet = function(req, res){
     if(noteText.indexOf("$")!=null){
       var sub = noteText.substring(noteText.indexOf("$"));
       var space2 = sub.indexOf(" ");
-      if (space2==null)
-        payment = sub  
-      else if (noteText.indexOf("$")==null)
+      if (noteText.indexOf("$")==null)
         payment = ""
+      else if (space2==null)
+        payment = sub  
       else
         payment = sub.substring(1, space2);
       console.log(payment);
