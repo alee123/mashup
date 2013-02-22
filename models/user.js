@@ -3,6 +3,7 @@ mongoose.connect(process.env.MONGOLAB_URI || 'localhost/mashup');
 
 var userSchema = mongoose.Schema({
   name: String,
+  balance: String
 });
 
 var User = mongoose.model('User', userSchema);

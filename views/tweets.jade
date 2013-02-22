@@ -1,31 +1,49 @@
 doctype 5
 html
 	head
-		title= title
-		link(rel='stylesheet', href=styler)
-		if(styler=='tweet_stylesheet.css')
-			include tweet_stylesheet.css
-		if(styler=='tweetTemp_stylesheet.css')
-			include tweetTemp_stylesheet.css
+		title Clever Title
+
 		script(src = 'http://code.jquery.com/jquery.js')
 		script(src='/javascripts/twitList.js')
+		link(href="//bootswatch.com/journal/bootstrap.css", rel="stylesheet")
+		link(rel='stylesheet', href=styler)
+
+	style
+		body {
+			padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+		}
 
 	body
+		.navbar.navbar-inverse.navbar-fixed-top
+			.navbar-inner
+				.container
+					button.btn.btn-navbar(type='button', data-toggle='collapse', data-target='.nav-collapse')
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.brand(href='#') Clever Title
+					.nav-collapse.collapse
+						ul.nav
+							li.active
+								a(href='#') Home
+		.container
 		block content
 
 
 		h1 Crappy Twitter
-		div
-			div(class='padded', id='login')
-				form(id='tweetForm', action='/tweets/:user', method='POST', value='#{username}'')
-					div(id="textLabel",class="names") Compose a twit
-					div(id='inputText')
-						input(id='textbox', type='text', name = 'tweet')
+		div(id='container')
+			div(id='leftBar')
+				div(class='padded')
+					| Welcome #{userC.name}
+				div(class='padded')
+					| Your current balance is:
 					br
-					input((id='submitter',type='submit', value='Send Twit')
-				#result
+					| $#{userC.balance}
 			div(class='border', id='tweets')
-				div(id='notImportant', class='padded')
-					key Look at all these twits!
-				
+				div(class='notes', id='login')
+					form(id='tweetForm', action='/tweets/:user', method='POST', value='#{username}'')
+						input(id='textbox', type='text', name = 'tweet')
+						br
+						input((id='submitter',type='submit', value='Submit')
+					#result	
 				include _twits

@@ -1,0 +1,31 @@
+img.display {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 100px;
+}
+
+body{
+	font-weight:bold;
+	font-size: 150%;
+	text-align: center;
+	color:#ffffff;
+	font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
+	background-image:url('../images/escheresque_ste.png');
+}
+
+div{
+	vertical-align: middle
+}
+
+.textinput { 
+	width: 200px; 
+	height: 20px; 
+	border: 1px solid #999999; 
+	padding: 5px; 
+}
+
+.submitButton{
+	width: 10%;
+	font-size: 100%;
+}

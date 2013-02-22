@@ -1,18 +1,42 @@
 doctype 5
 html
 	head
-		title= title
-		link(href='a_stylesheet.css', rel='stylesheet')
-		include a_stylesheet.css
+		title Login Please.
+
 		script(src = 'http://code.jquery.com/jquery.js')
-		script(src='/javascripts/forNewUser.js')
+		link(href="//bootswatch.com/journal/bootstrap.css", rel="stylesheet")
+		link(href='/stylesheets/a_stylesheet.css', rel='stylesheet')
+
+	style
+		body {
+			padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+		}
+
 	body
+		.navbar.navbar-inverse.navbar-fixed-top
+			.navbar-inner
+				.container
+					button.btn.btn-navbar(type='button', data-toggle='collapse', data-target='.nav-collapse')
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.brand(href='#') Clever Title
+					.nav-collapse.collapse
+						ul.nav
+							li.active
+								a(href='#') Home
+		.container
 		block content
 		h1 
 		div
 			form(name='input', action='/users/new', method='POST')
+				br
+				br
 				key Username: 
 				input(class='textinput', type='text', name = 'uName')
+				br
+				key Password: 
+				input(class='textinput', type='text', name = 'pass')
 				br
 				br
 				input(class='submitButton', type='submit', value='Submit')
