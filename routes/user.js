@@ -42,9 +42,10 @@ exports.newTweet = function(req, res){
     button = "Pay";
   else
     button = "Archive";
-  if(cash==payee)
+  if(cash==payee){
     button = "Archive";
-    cash = ""
+    cash = "";
+  }
 
   var tweet = new Tweet({text: noteText, user: req.session.user.name, payTo: payee, money: cash, done:doneText, buttonText:button});
   console.log(tweet);
@@ -112,7 +113,7 @@ exports.delete = function(req,res){
           minus.save(function (err, docs){
           })
           req.session.user = minus;
-          res.render('_balance', {userC:currentUser});
+          res.render('_balance', {userC:minus});
           plus.save(function (err,docs){
           })
           p[0].remove();
